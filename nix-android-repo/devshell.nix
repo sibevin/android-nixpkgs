@@ -3,7 +3,7 @@
 , devshell
 , gradle
 , gradle-properties
-, jdk
+, jdk8
 , update-locks
 }:
 
@@ -15,13 +15,13 @@ devshell.mkShell {
   env = [
     {
       name = "JAVA_HOME";
-      eval = "${jdk.home}";
+      eval = "${jdk8.home}";
     }
   ];
 
   packages = [
     gradle
-    jdk
+    jdk8
   ];
 
   devshell.startup = {

@@ -36,7 +36,7 @@ let
     gawk
     gnugrep
     gnused
-    jdk
+    jdk8
     python3
     which
   ]);

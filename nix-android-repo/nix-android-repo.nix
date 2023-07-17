@@ -2,7 +2,7 @@
 , stdenv
 , makeWrapper
 , gradle
-, jdk
+, jdk8
 , maven-repo
 }:
 
@@ -14,7 +14,7 @@ stdenv.mkDerivation rec {
 
   nativeBuildInputs = [ makeWrapper gradle ];
 
-  buildInputs = [ jdk ];
+  buildInputs = [ jdk8 ];
 
   buildPhase = ''
     export GRADLE_USER_HOME=$(mktemp -d)
@@ -27,6 +27,6 @@ stdenv.mkDerivation rec {
   '';
 
   postFixup = ''
-    wrapProgram $out/bin/nix-android-repo --set JAVA_HOME ${jdk.home}
+    wrapProgram $out/bin/nix-android-repo --set JAVA_HOME ${jdk8.home}
   '';
 }
